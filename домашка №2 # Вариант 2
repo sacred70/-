@@ -26,6 +26,6 @@ def quiz(room_question):
 
     # результат
     percent = round(((account/10) / 3) * 100, 2)
-    print(f"Вот и все, {user_name}!\nВы ответили на {account/10} вопросов из 3 верно.\nВы заработали {account} баллов."
+    print(f"Вот и все, {user_name}!\nВы ответили на {round(account/10)} вопросов из 3 верно.\nВы заработали {account} баллов."
           f"\nЭто {percent} процентов.")
 quiz(room_question)
