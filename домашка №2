@@ -1,0 +1,41 @@
+# Вариант 1
+# счетчик верных ответов
+counter = 0
+# счетчик балов за верные ответы
+account = 0
+
+# приветствие и запрос имени пользователя
+user_name = str.capitalize((input(f"Привет!\nПредлагаю проверить свои знания английского!"
+                                  f"\nРасскажи, как тебя зовут!\n")))
+print(f"Привет, {user_name}, начинаем тренировку!")
+
+# вопрос №1
+question_1 = input("Вопрос номер 1:\nMy name ___ Vova")
+if question_1 == "is":
+    print("Верный ответ!\nТы получешь 10 очков")
+    counter += 1
+    account += 10
+else:
+    print("Не правильно!\nПравильный ответ is")
+# вопрос №2
+question_2 = input("Вопрос номер 2:\nI ___ a coder")
+if question_2 == "am":
+    print("Верный ответ!\nТы получешь 10 очков")
+    counter += 1
+    account += 10
+else:
+    print("Не правильно!\nПравильный ответ am")
+
+# вопрос №3
+question_3 = input("Вопрос номер 3:\nI live ___ Moscow")
+if question_3 == "in":
+    print("Верный ответ!\nТы получешь 10 очков")
+    counter += 1
+    account += 10
+else:
+    print("Не правильно!\nПравильный ответ in")
+
+# результат
+percent = round((counter/3) * 100, 2)
+print(f"Вот и все, {user_name}!\nВы ответили на {counter} вопросов из 3 верно.\nВы заработали {account} баллов."
+      f"\nЭто {percent} процентов.")
