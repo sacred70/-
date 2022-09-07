@@ -1,0 +1,31 @@
+# Вариант 2
+#номер вопроса
+room_question = 1
+
+def quiz(room_question):
+    #узнаем имя пользователя и приветствуем его
+    user_name = str.capitalize((input(f"Привет!\nПредлагаю проверить свои знания английского!"
+                                      f"\nРасскажи, как тебя зовут!\n")))
+    print(f"Привет, {user_name}, начинаем тренировку!")
+    #создаем словари с вопросами и ответами
+    dictionary_question = {1: "My name ___ Vova", 2: "I ___ a coder", 3: "I live ___ Moscow"}
+    dictionary_answer = {1: "is", 2: "am", 3: "in"}
+    # счетчик балов за верные ответы (и количество правильных)
+    account = 0
+
+    # цикл задает вопросы и проверяет
+    while room_question<=3:
+        question = input(f"Вопрос номер {[room_question]}:\n {dictionary_question[room_question]}")
+
+        if question == dictionary_answer[room_question]:
+            print("Верный ответ!\nТы получешь 10 очков")
+            account += 10
+        else:
+            print(f"Не правильно!\nПравильный ответ {dictionary_answer[room_question]}")
+        room_question+=1
+
+    # результат
+    percent = round(((account/10) / 3) * 100, 2)
+    print(f"Вот и все, {user_name}!\nВы ответили на {account/10} вопросов из 3 верно.\nВы заработали {account} баллов."
+          f"\nЭто {percent} процентов.")
+quiz(room_question)
